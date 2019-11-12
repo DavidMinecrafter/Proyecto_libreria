@@ -64,8 +64,8 @@ GEM
     autoprefixer-rails (9.7.1)
       execjs
     aws-eventstream (1.0.3)
-    aws-partitions (1.235.0)
-    aws-sdk-core (3.75.0)
+    aws-partitions (1.236.0)
+    aws-sdk-core (3.76.0)
       aws-eventstream (~> 1.0, >= 1.0.2)
       aws-partitions (~> 1, >= 1.228.0)
       aws-sigv4 (~> 1.1)
@@ -124,6 +124,9 @@ GEM
     guard-minitest (2.4.6)
       guard-compat (~> 1.2)
       minitest (>= 3.0)
+    hpricot (0.8.6)
+    html2slim (0.2.0)
+      hpricot
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.9.3)
@@ -234,6 +237,10 @@ GEM
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
+    slim-rails (3.2.0)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+      slim (>= 3.0, < 5.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -291,6 +298,7 @@ DEPENDENCIES
   faker (= 2.1.2)
   guard (= 2.15.0)
   guard-minitest (= 2.4.6)
+  html2slim
   image_processing (= 1.9.3)
   jbuilder (= 2.9.1)
   listen (= 3.1.5)
@@ -304,6 +312,7 @@ DEPENDENCIES
   sass-rails (= 5.1.0)
   selenium-webdriver (= 3.142.4)
   slim
+  slim-rails
   spring (= 2.1.0)
   spring-watcher-listen (= 2.0.1)
   sqlite3 (= 1.4.1)
