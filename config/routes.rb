@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get '/libManager', to: 'pag_estatica#libManager'
   get '/libPlus', to: 'pag_estatica#libPlus'
   get '/tiendaManager', to: 'pag_estatica#tiendaManager'
-  get '/tiendaPlus', to: 'pag_estatica#tiendaPlus'
+  get '/tiendaPlus', to: 'tiendas#new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

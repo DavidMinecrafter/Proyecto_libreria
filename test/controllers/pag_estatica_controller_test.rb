@@ -26,18 +26,8 @@ class PagEstaticaControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get libPlus" do
-    get libPlus_path
-    assert_response :success
-  end
-
   test "should get tiendaManager" do
     get tiendaManager_path
-    assert_response :success
-  end
-
-  test "should get tiendaPlus" do
-    get tiendaPlus_path
     assert_response :success
   end
 

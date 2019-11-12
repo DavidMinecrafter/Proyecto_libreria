@@ -11,12 +11,7 @@ class PagEstaticaController < ApplicationController
   def libManager
   end
 
-  def libPlus
-  end
-
   def tiendaManager
   end
 
-  def tiendaPlus
-  end
 end
