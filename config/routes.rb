@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'pag_estatica#login'
+  root 'pag_estatica#home'
   get 'pag_estatica/login'
   get 'pag_estatica/home'
   get 'pag_estatica/show'
