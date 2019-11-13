@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get '/libPlus', to: 'pag_estatica#libPlus'
   get '/tiendaManager', to: 'pag_estatica#tiendaManager'
   get '/tiendaPlus', to: 'tiendas#new'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :tiendas
 end
