@@ -1,0 +1,11 @@
+= form_with(model: @tienda, local: true) do |f|
+      = f.label :codename
+      = f.text_field :codename, class: 'form-control'
+      
+      = f.label :address
+      = f.email_field :address, class: 'form-control'
+      
+      = f.label :phone
+      = f.password_field :phone, class: 'form-control'
+      
+      = f.submit "Guardar cambios", class: "btn btn-primary"

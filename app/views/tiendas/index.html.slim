@@ -1,0 +1,6 @@
+- provide(:title, 'Tienda manager')
+h1 Todas las tiendas
+ul.tiendas
+  - @tiendas.each do |tienda|
+    li
+      = link_to tienda.codename, tienda

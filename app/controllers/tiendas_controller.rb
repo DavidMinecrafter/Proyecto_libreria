@@ -18,6 +18,24 @@ class TiendasController < ApplicationController
     end
   end
   
+  def edit
+    @tienda = Tienda.find(params[:id])
+  end
+  
+  def update
+    @tienda = Tienda.find(params[:id])
+    if @tienda.update(user_params)
+      flash[:success] = "Datos actualizados"
+      redirect_to @tienda
+    else
+      render 'edit'
+    end
+  end
+    
+  def index
+    @tiendas = Tienda.all
+  end
+  
   private
   
     def tienda_params

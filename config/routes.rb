@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/show', to: 'pag_estatica#show'
   get '/libManager', to: 'pag_estatica#libManager'
   get '/libPlus', to: 'pag_estatica#libPlus'
-  get '/tiendaManager', to: 'pag_estatica#tiendaManager'
+  get '/tiendaManager', to: 'tiendas#index'
   get '/tiendaPlus', to: 'tiendas#new'
   resources :tiendas
 end

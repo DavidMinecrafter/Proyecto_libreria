@@ -1,15 +1,7 @@
 - provide(:title, 'Agregar Tienda')
+- provide(:button_text, 'Agregar Tienda')
 h1 Agregar Tienda
 .row
   .col-md-6.col-md-offset-3
-    = form_with(model: @user, local: true) do |f|
-      = f.label :codename
-      = f.text_field :codename
-      
-      = f.label :address
-      = f.email_field :address
-      
-      = f.label :phone
-      = f.password_field :phone
-      
-      = f.submit "Agregar tienda", class: "btn btn-primary"
+    = form_with(model: @tienda, local: true) do |f|
+      = render 'form'
