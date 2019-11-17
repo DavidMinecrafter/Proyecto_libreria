@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Sample Tienda
+Tienda.create!(codename: "Tienda Ejemplo",
+               address: "Lazaro Cardenas",
+               phone: "81 2156 0256")
+               
+10.times do |n|
+  codename = Faker::App.name
+  address = Faker::Address.full_address
+  phone = Faker::PhoneNumber.cell_phone 
+  Tienda.create!(codename: codename,
+                 address: address,
+                 phone: phone)
+end

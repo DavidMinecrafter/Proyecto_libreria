@@ -36,6 +36,12 @@ class TiendasController < ApplicationController
     @tiendas = Tienda.all
   end
   
+  def destroy
+    Tienda.find(params[:id]).destroy
+    flash[:success] = "Tienda eliminada"
+    redirect_to tiendas_url
+  end
+  
   private
   
     def tienda_params
