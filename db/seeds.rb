@@ -32,3 +32,9 @@ Book.create!(title: "El Principito",
                author: author,
                year: year )
 end
+
+books = Book.take(10)
+4.times do
+  quantity = rand(1..100)
+  books.each { |book| book.quantities.create!(tienda_id: rand(1..10), quantity: quantity) }
+end

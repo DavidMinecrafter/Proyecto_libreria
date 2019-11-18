@@ -7,6 +7,6 @@ class CreateQuantities < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
-    add_index :quantities, [:tienda_id, :book_id], unique: true
+    add_index :quantities, [:tienda_id, :book_id]
   end
 end
