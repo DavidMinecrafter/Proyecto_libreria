@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_000950) do
+ActiveRecord::Schema.define(version: 2019_11_18_060515) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -18,6 +18,17 @@ ActiveRecord::Schema.define(version: 2019_11_18_000950) do
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "quantities", force: :cascade do |t|
+    t.integer "quantity"
+    t.integer "tienda_id", null: false
+    t.integer "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_quantities_on_book_id"
+    t.index ["tienda_id", "book_id"], name: "index_quantities_on_tienda_id_and_book_id"
+    t.index ["tienda_id"], name: "index_quantities_on_tienda_id"
   end
 
   create_table "tiendas", force: :cascade do |t|
@@ -29,4 +40,6 @@ ActiveRecord::Schema.define(version: 2019_11_18_000950) do
     t.index ["codename"], name: "index_tiendas_on_codename", unique: true
   end
 
+  add_foreign_key "quantities", "books"
+  add_foreign_key "quantities", "tiendas"
 end

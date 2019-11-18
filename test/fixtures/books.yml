@@ -1,11 +1,11 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+pedro:
+  title: Pedro Paramo
+  author: Juan Rulfo
+  year: 1995
+  
+hola:
+  title: hola
+  author: hola hola
+  year: 1995
 
-one:
-  title: MyString
-  author: MyString
-  year: 1
 
-two:
-  title: MyString
-  author: MyString
-  year: 1
