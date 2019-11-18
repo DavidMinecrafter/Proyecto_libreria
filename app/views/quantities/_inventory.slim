@@ -1,0 +1,7 @@
+table
+  tbody
+    tr
+      td.tienda= link_to Book.find_by(id: quantity.book_id).title, Book.find_by(id: quantity.book_id)
+      td.tienda= Book.find_by(id: quantity.book_id).author
+      td.quantity
+        = quantity.quantity

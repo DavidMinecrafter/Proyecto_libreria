@@ -1,2 +1,15 @@
-= @book.title
-| , #{@book.author} , #{@book.year}
+- provide(:title, @book.title)
+.row
+  aside.col-md-4
+    section.book_info
+      h1
+        = @book.title
+      h2
+        = @book.author
+        = @book.year
+  .col-md-8
+    h3 Inventario en tiendas
+    - if @book.quantities.any?
+      ol.quantities
+        = render @quantities
+      = will_paginate @quantities

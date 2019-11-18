@@ -1,2 +1,22 @@
-= @tienda.codename
-| , #{@tienda.address} , #{@tienda.phone}
+- provide(:title, @tienda.codename)
+.row
+  aside.col-md-4
+    section.book_info
+      h1
+        = @tienda.codename
+      h2
+        = @tienda.address
+        = @tienda.phone
+  .col-md-8
+    h3 Libros en la tienda
+    - if @tienda.quantities.any?
+      ol.inventories
+        table
+          tbody
+            tr
+              td.tienda= link_to Book.find_by(id: @inventories.book_id).title, Book.find_by(id: quantity.book_id)
+              td.tienda= Book.find_by(id: @inventories.book_id).author
+              td.quantity
+                = @inventories.quantity
+      = will_paginate @inventories
+      

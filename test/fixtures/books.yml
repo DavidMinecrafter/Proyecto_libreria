@@ -1,11 +1,11 @@
 pedro:
-  title: Pedro Paramo
-  author: Juan Rulfo
+  title: "Pedro Paramo"
+  author: "Juan Rulfo"
   year: 1995
   
 hola:
-  title: hola
-  author: hola hola
+  title: "hola"
+  author: "hola hola"
   year: 1995
 
 

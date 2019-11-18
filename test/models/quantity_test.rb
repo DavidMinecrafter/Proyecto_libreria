@@ -10,4 +10,5 @@ class QuantityTest < ActiveSupport::TestCase
   test "should be valid" do
     assert @quantity.valid?
   end
+  
 end
