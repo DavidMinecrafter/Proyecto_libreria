@@ -1,0 +1,7 @@
+- provide(:title, 'Libros manager')
+h1 Todos los libros
+ul.tiendas
+  - @books.each do |book|
+    li
+      = link_to book.title, book
+      = link_to " | delete", book, method: :delete, data: { confirm: "You sure?" }

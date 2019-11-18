@@ -1,0 +1,11 @@
+= form_with(model: @book, local: true) do |f|
+      = f.label :title
+      = f.text_field :title, class: 'form-control'
+      
+      = f.label :author
+      = f.text_field :author, class: 'form-control'
+      
+      = f.label :year
+      = f.number_field :year, class: 'form-control'
+      
+      = f.submit "Guardar cambios", class: "btn btn-primary"

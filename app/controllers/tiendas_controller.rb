@@ -24,7 +24,7 @@ class TiendasController < ApplicationController
   
   def update
     @tienda = Tienda.find(params[:id])
-    if @tienda.update(user_params)
+    if @tienda.update(tienda_params)
       flash[:success] = "Datos actualizados"
       redirect_to @tienda
     else
