@@ -4,7 +4,7 @@ class QuantityTest < ActiveSupport::TestCase
   def setup
     @tienda = tiendas(:chida)
     @book = books(:pedro)
-    @quantity = Quantity.new(quantity: 5, tienda_id: @tienda.id, book_id: @book.id)
+    @quantity = @book.quantities.build(tienda_id: @tienda.id, quantity: 5)
   end
   
   test "should be valid" do

@@ -1,25 +1,24 @@
 a:
   quantity: 6
-  tienda_id: lmao
-  book_id: pedro
+  tienda: lmao
+  book: pedro
 
 b:
   quantity: 20
-  tienda_id: lmao
-  book_id: hola
+  tienda: lmao
+  book: hola
   
 c:
   quantity: 60
-  tienda_id: chida
-  book_id: pedro
+  tienda: chida
+  book: pedro
   
 d:
   quantity: 13
-  tienda_id: xd
-  book_id: hola
+  tienda: xd
+  book: hola
   
-a:
+e:
   quantity: 11
-  tienda_id: xd
-  book_id: pedro
-
+  tienda: xd
+  book: pedro
