@@ -26,8 +26,12 @@ class QuantitiesController < ApplicationController
   def edit
   end
   
+  def index
+    @quantities = Quantity.search(params[:search])
+  end
+  
   private
     def quantity_params
-      params.require(:quantity).permit(:book_id, :tienda_id, :quantity)
+      params.require(:quantity).permit(:book_id, :tienda_id, :quantity, :search)
     end
 end

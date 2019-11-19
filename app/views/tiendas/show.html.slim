@@ -11,7 +11,7 @@
     h3 Libros en la tienda
     - if @inventories.any?
       ol.inventories
-        table
+        table.blueTable
           tbody
             - @inventories.each do |quantity|
               tr

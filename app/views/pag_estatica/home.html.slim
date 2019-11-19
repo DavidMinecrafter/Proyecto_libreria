@@ -7,6 +7,8 @@ table.blueTable
     tr
       th Tienda
       th Libro
+      th Autor
+      th Year
       th Cantidad
   tbody
     - Quantity.all.each do |quantity|
@@ -15,5 +17,9 @@ table.blueTable
           = quantity.tienda.codename
         td
           = quantity.book.title
+        td
+          = quantity.book.author
+        td
+          = quantity.book.year
         td
           = quantity.quantity
