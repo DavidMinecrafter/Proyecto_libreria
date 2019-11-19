@@ -9,14 +9,16 @@
         = @tienda.phone
   .col-md-8
     h3 Libros en la tienda
-    - if @tienda.quantities.any?
+    - if @inventories.any?
+      = render @inventories
       ol.inventories
         table
           tbody
-            tr
-              td.tienda= link_to Book.find_by(id: @inventories.book_id).title, Book.find_by(id: quantity.book_id)
-              td.tienda= Book.find_by(id: @inventories.book_id).author
-              td.quantity
-                = @inventories.quantity
+            - @inventories.each do |quantity|
+              tr
+                td.tienda= link_to quantity.book.title, book_path(quantity.book)
+                td.tienda= quantity.book.author
+                td.quantity
+                  = quantity.quantity
       = will_paginate @inventories
       
