@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/tiendaPlus', to: 'tiendas#new'
   resources :tiendas
   resources :books
+  resources :quantities, only: [:create, :destroy, :edit]
 end
