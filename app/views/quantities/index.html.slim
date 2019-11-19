@@ -1,0 +1,32 @@
+.center.jumbotron
+  h1 Libreria Ejemplo
+  h2
+    | Busca de acuerdo a tu preferencia
+
+h4 Search by title:
+= form_tag(quantities_path, method: :get) do
+  = text_field_tag(:search, params[:search])
+  = submit_tag("Search")
+
+      
+table.blueTable
+  thead
+    tr
+      th Tienda
+      th Libro
+      th Autor
+      th Year
+      th Cantidad
+  tbody
+    - @quantities.each do |quantity|
+      tr
+        td
+          = quantity.tienda.codename
+        td
+          = quantity.book.title
+        td
+          = quantity.book.author
+        td
+          = quantity.book.year
+        td
+          = quantity.quantity

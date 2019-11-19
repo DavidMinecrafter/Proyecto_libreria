@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'pag_estatica#home'
+  root 'quantities#index'
   get '/login', to: 'pag_estatica#login'
   get '/show', to: 'pag_estatica#show'
   get '/libManager', to: 'books#index'
@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get '/tiendaPlus', to: 'tiendas#new'
   resources :tiendas
   resources :books
-  resources :quantities, only: [:create, :destroy, :edit]
+  resources :quantities
 end

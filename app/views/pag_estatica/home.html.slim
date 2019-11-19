@@ -2,24 +2,5 @@
   h1 Libreria Ejemplo
   h2
     | Busca de acuerdo a tu preferencia
-table.blueTable
-  thead
-    tr
-      th Tienda
-      th Libro
-      th Autor
-      th Year
-      th Cantidad
-  tbody
-    - Quantity.all.each do |quantity|
-      tr
-        td
-          = quantity.tienda.codename
-        td
-          = quantity.book.title
-        td
-          = quantity.book.author
-        td
-          = quantity.book.year
-        td
-          = quantity.quantity
+    
+= render 'quantities/index'
