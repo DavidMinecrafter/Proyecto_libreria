@@ -1,0 +1,17 @@
+= form_with(model: @quantity, local: true) do |f|
+      = f.label :tienda
+      select name="Tienda" 
+        option value=""  Seleccione una tienda
+        - Tienda.all.each do |tienda|
+          option value="#{tienda.id}" = tienda.codename
+      
+      = f.label :book
+      select name="Book"
+        option value=""  Seleccione un libro
+        - Book.all.each do |book|
+          option value="#{book.id}" = book.title
+      
+      = f.label :quantity
+      = f.number_field :quantity, class: 'form-control'
+      
+      = f.submit "Crear relacion", class: "btn btn-primary"

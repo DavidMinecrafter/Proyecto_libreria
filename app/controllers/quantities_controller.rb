@@ -1,14 +1,12 @@
 class QuantitiesController < ApplicationController
-  def create(tienda)
-    @quantity = Quantity.new(quantity_params)
-    flash[:sucess] = "Relacion creada"
-    redirect_to tiendas_url
+  def new
+    @quantity = Quantity.new
   end
   
-  def create(book)
+  def create
     @quantity = Quantity.new(quantity_params)
-    flash[:sucess] = "Relacion creada"
-    redirect_to books_url
+    flash[:success] = "Relacion creada"
+    redirect_to root_path
   end
   
   def destroy

@@ -5,42 +5,12 @@ class Quantity < ApplicationRecord
   validates :book_id, presence: true
   
   def self.search(search)
-    if search
-      title = Book.find_by(title: search)
-      if title
-        self.where(book_id: title)
-      else
-        Quantity.all
-      end
-    else
-      Quantity.all
-    end
+    collection = joins(:book, :tienda)
+    return collection unless search
+    
+    collection.where(tiendas: { codename: search })
+      .or(collection.where(books: { title: search }))
+      .or(collection.where(books: { author: search}))
+      .or(collection.where(books: { year: search}))
   end
-  
-  def self.search(search)
-    if search
-      author = Book.find_by(author: search)
-      if author
-        self.where(book_id: author)
-      else
-        Quantity.all
-      end
-    else
-      Quantity.all
-    end
-  end
-  
-  def self.search(search)
-    if search
-      year = Book.find_by(year: search)
-      if year
-        self.where(book_id: year)
-      else
-        Quantity.all
-      end
-    else
-      Quantity.all
-    end
-  end
-  
 end
