@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/libPlus', to: 'books#new'
   get '/tiendaManager', to: 'tiendas#index'
   get '/tiendaPlus', to: 'tiendas#new'
+  get '/createRelation', to: 'quantities#new'
   resources :tiendas
   resources :books
   resources :quantities

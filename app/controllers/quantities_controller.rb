@@ -11,16 +11,10 @@ class QuantitiesController < ApplicationController
     redirect_to books_url
   end
   
-  def destroy(tienda)
+  def destroy
     Quantity.find(params[:id]).destroy
     flash[:success] = "Relacion destruida"
-    redirect_to tiendas_url
-  end
-  
-  def destroy(book)
-    Quantity.find(params[:id]).destroy
-    flash[:success] = "Relacion destruida"
-    redirect_to books_url
+    redirect_to root_path
   end
   
   def edit
