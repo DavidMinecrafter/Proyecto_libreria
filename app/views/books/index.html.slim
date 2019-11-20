@@ -1,7 +1,9 @@
 - provide(:title, 'Libros manager')
 h1 Todos los libros
+= link_to "Agregar libro", libPlus_path, class: "btn btn-lg btn-primary"
 ul.tiendas
   - @books.each do |book|
     li
       = link_to book.title, book
+      = link_to " | edit information", edit_book_path(book)
       = link_to " | delete", book, method: :delete, data: { confirm: "You sure?" }

@@ -17,30 +17,4 @@ class Quantity < ApplicationRecord
     end
   end
   
-  def self.searchA(search)
-    if search
-      author = Book.find_by(author: search)
-      if title
-        self.where(book_id: author)
-      else
-        Quantity.all
-      end
-    else
-      Quantity.all
-    end
-  end
-  
-  def self.searchY(search)
-    if search
-      year = Book.find_by(year: search)
-      if title
-        self.where(book_id: year)
-      else
-        Quantity.all
-      end
-    else
-      Quantity.all
-    end
-  end
-  
 end
