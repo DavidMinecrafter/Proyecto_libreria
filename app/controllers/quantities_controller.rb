@@ -20,6 +20,17 @@ class QuantitiesController < ApplicationController
   end
   
   def edit
+    @quantity = Quantity.find(params[:id])
+  end
+  
+  def update
+    @quantity = Quantity.find(params[:id])
+    if @quantity.update(quantity_params)
+      flash[:success] = "Datos actualizados"
+      redirect_to root_path
+    else
+      render 'edit'
+    end
   end
   
   def index

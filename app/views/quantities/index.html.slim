@@ -2,6 +2,8 @@
   h1 Libreria Ejemplo
   h2
     | Busca de acuerdo a tu preferencia
+  = link_to "Crear Relacion", createRelation_path, class: "btn btn-lg btn-primary"  
+    
 
 h4 Buscar:
 = form_tag(quantities_path, method: :get) do

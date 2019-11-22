@@ -1,0 +1,6 @@
+= form_with(model: @quantity, local: true) do |f|
+      
+      = f.label :quantity
+      = f.number_field :quantity, class: 'form-control'
+      
+      = f.submit "Crear relacion", class: "btn btn-primary"
