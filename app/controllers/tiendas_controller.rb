@@ -2,8 +2,7 @@ class TiendasController < ApplicationController
   
   def show
     @tienda = Tienda.find(params[:id])
-    @book = Book.find(params[:id])
-    @inventories = @book.quantities.paginate(page: params[:page])
+    @inventories = @tienda.quantities.paginate(page: params[:page])
   end
   
   def new

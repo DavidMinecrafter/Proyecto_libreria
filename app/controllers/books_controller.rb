@@ -2,8 +2,7 @@ class BooksController < ApplicationController
   
   def show
     @book = Book.find(params[:id])
-    @tienda= Tienda.find(params[:id])
-    @quantities = @tienda.quantities.paginate(page: params[:page])
+    @quantities = @book.quantities.paginate(page: params[:page])
   end
   
   def new
@@ -28,7 +27,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     if @book.update(book_params)
       flash[:success] = "Datos actualizados"
-      redirect_to @book
+      redirect_to libManager_path
     else
       render 'edit'
     end
