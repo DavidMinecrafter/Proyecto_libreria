@@ -1,9 +1,16 @@
 - provide(:title, 'Tienda manager')
 h1 Todas las tiendas
 = link_to "Agregar tienda", tiendaPlus_path, class: "btn btn-lg btn-primary"
-ul.tiendas
+
+table.blueTable
+  tbody  
   - @tiendas.each do |tienda|
-    li
-      = link_to tienda.codename, tienda
-      = link_to " | edit information", edit_tienda_path(tienda)
-      = link_to " | delete", tienda, method: :delete, data: { confirm: "You sure?" }
+    tr
+      td
+        = link_to tienda.codename, tienda
+      td
+        = link_to "Editar information", edit_tienda_path(tienda)
+      td
+        = link_to "Borrar tienda", tienda, method: :delete, data: { confirm: "You sure?" }
+
+
