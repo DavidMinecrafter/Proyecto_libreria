@@ -30,6 +30,6 @@ table.blueTable
         td
           = quantity.book.year
         td
-          = quantity.quantity
+          = link_to quantity.quantity, edit_quantity_path(quantity)  
         td
           = link_to "Borrar libros de la tienda", quantity, method: :delete, data: { confirm: "You sure?" }

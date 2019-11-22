@@ -2,7 +2,8 @@ class BooksController < ApplicationController
   
   def show
     @book = Book.find(params[:id])
-    @quantities = @book.quantities.paginate(page: params[:page])
+    @tienda= Tienda.find(params[:id])
+    @quantities = @tienda.quantities.paginate(page: params[:page])
   end
   
   def new

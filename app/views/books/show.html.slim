@@ -11,6 +11,13 @@
   .col-md-8
     h3 Inventario en tiendas
     - if @book.quantities.any?
-      ol.quantities
-        = render @quantities
-      = will_paginate @quantities
+      table.blueTable
+        tbody
+          - @quantities.each do |quantity|
+            tr
+              td.tienda= link_to quantity.tienda.codename, tienda_path(quantity.tienda)
+              td.tienda= quantity.tienda.address
+              td.quantity
+                = quantity.quantity
+    = will_paginate @quantities
+      

@@ -10,14 +10,13 @@
   .col-md-8
     h3 Libros en la tienda
     - if @inventories.any?
-      ol.inventories
-        table.blueTable
-          tbody
-            - @inventories.each do |quantity|
-              tr
-                td.tienda= link_to quantity.book.title, book_path(quantity.book)
-                td.tienda= quantity.book.author
-                td.quantity
-                  = quantity.quantity
-      = will_paginate @inventories
+      table.blueTable
+        tbody
+          - @inventories.each do |quantity|
+            tr
+              td.tienda= link_to quantity.book.title, book_path(quantity.book)
+              td.tienda= quantity.book.author
+              td.quantity
+                = quantity.quantity
+    = will_paginate @inventories
       
