@@ -4,9 +4,13 @@ class QuantitiesController < ApplicationController
   end
   
   def create
-    @quantity = Quantity.new(quantity_params)
-    flash[:success] = "Relacion creada"
-    redirect_to root_path
+    @quantity = Quantity.create(quantity_params)
+    if @quantity.save
+      flash[:success] = "Relacion creada"
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
   
   def destroy

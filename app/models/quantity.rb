@@ -3,6 +3,7 @@ class Quantity < ApplicationRecord
   belongs_to :book, class_name: "Book"
   validates :tienda_id, presence: true
   validates :book_id, presence: true
+  validates :quantity, presence: true
   
   def self.search(search)
     collection = joins(:book, :tienda)

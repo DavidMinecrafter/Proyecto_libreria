@@ -1,12 +1,12 @@
-= form_with(model: @quantity, local: true) do |f|
-      = f.label :tienda
-      select name="Tienda" 
+= form_with(model: @quantity, local: true, method: "post") do |f|
+      = f.label :tienda_id
+      select name="quantity[tienda_id]"
         option value=""  Seleccione una tienda
         - Tienda.all.each do |tienda|
           option value="#{tienda.id}" = tienda.codename
       
-      = f.label :book
-      select name="Book"
+      = f.label :book_id
+      select name="quantity[book_id]"
         option value=""  Seleccione un libro
         - Book.all.each do |book|
           option value="#{book.id}" = book.title
